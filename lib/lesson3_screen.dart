@@ -52,45 +52,51 @@ class HomePageSate extends State<Lesson3HomePage> {
         // backgroundColor: Colors.blue,
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            //Lật ngược dưới lên trên
-            // verticalDirection: VerticalDirection.up,
-            // căn theo trục dọc
-            mainAxisAlignment: MainAxisAlignment.center,
-            // căn theo trục ngang
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text('Lesson 3 - HomePage'),
-              Text('Số lần click vào nút'),
-              Text('$counter', style: Theme
-                  .of(context)
-                  .textTheme
-                  .displaySmall),
-              // Text('Lesson 3 - HomePage'),
-              // Text('Lesson 3 - HomePage')
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.network(
-                    'https://codefresher.vn/wp-content/uploads/2023/12/Banner-06-kh-Flutter.jpg',
-                    width: 200,
-                    height: 200,
-                  )
-                ],
-              ),
-              TextField(),
-              ElevatedButton(onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Nut da duoc bam!')));
-
-              }, child: Text('Click me!')),
-            ],
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Center(
+            child: Column(
+              //Lật ngược dưới lên trên
+              // verticalDirection: VerticalDirection.up,
+              // căn theo trục dọc
+              mainAxisAlignment: MainAxisAlignment.center,
+              // căn theo trục ngang
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Lesson 3 - HomePage'),
+                Text('Số lần click vào nút'),
+                Text('$counter',
+                    style: Theme.of(context).textTheme.displaySmall),
+                // Text('Lesson 3 - HomePage'),
+                // Text('Lesson 3 - HomePage')
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Flexible(child: TextField()),
+                    // Expanded(child: TextField()),
+                    SizedBox(width: 16.0,),
+                    Image.network(
+                      'https://codefresher.vn/wp-content/uploads/2023/12/Banner-06-kh-Flutter.jpg',
+                      width: 100,
+                      height: 100,
+                    ),
+                    SizedBox(width: 16.0,),
+                    ElevatedButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Nut da duoc bam!')));
+                        },
+                        child: Text('Click me!')),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        // backgroundColor: Colors.blue,
+          // backgroundColor: Colors.blue,
           child: Icon(Icons.plus_one),
           onPressed: () {
             counter++;
