@@ -63,16 +63,34 @@ class HomePageSate extends State<Lesson3HomePage> {
             children: [
               Text('Lesson 3 - HomePage'),
               Text('Số lần click vào nút'),
-              Text('$counter',
-                  style: Theme.of(context).textTheme.displaySmall),
+              Text('$counter', style: Theme
+                  .of(context)
+                  .textTheme
+                  .displaySmall),
               // Text('Lesson 3 - HomePage'),
               // Text('Lesson 3 - HomePage')
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.network(
+                    'https://codefresher.vn/wp-content/uploads/2023/12/Banner-06-kh-Flutter.jpg',
+                    width: 200,
+                    height: 200,
+                  )
+                ],
+              ),
+              TextField(),
+              ElevatedButton(onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Nut da duoc bam!')));
+
+              }, child: Text('Click me!')),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          // backgroundColor: Colors.blue,
+        // backgroundColor: Colors.blue,
           child: Icon(Icons.plus_one),
           onPressed: () {
             counter++;
@@ -102,8 +120,8 @@ class HomePageSate extends State<Lesson3HomePage> {
     super.deactivate();
   }
 
-  // @override
-  // void didUpdateWidget(Widget oldWidget) {
-  //   super.didUpdateWidget(oldWidget);
-  // }
+// @override
+// void didUpdateWidget(Widget oldWidget) {
+//   super.didUpdateWidget(oldWidget);
+// }
 }
