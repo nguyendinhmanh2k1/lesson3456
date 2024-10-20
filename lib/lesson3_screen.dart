@@ -51,19 +51,24 @@ class HomePageSate extends State<Lesson3HomePage> {
         //thêm màu
         // backgroundColor: Colors.blue,
       ),
-      body: Center(
-        child: Column(
-          // căn theo trục dọc
-          mainAxisAlignment: MainAxisAlignment.center,
-          // căn theo trục ngang
-          // crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('Lesson 3 - HomePage'),
-            Text('Số lần click vào nút'),
-            Text('$counter', style: Theme.of(context).textTheme.headlineSmall),
-            // Text('Lesson 3 - HomePage'),
-            // Text('Lesson 3 - HomePage')
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            //Lật ngược dưới lên trên
+            // verticalDirection: VerticalDirection.up,
+            // căn theo trục dọc
+            mainAxisAlignment: MainAxisAlignment.center,
+            // căn theo trục ngang
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('Lesson 3 - HomePage'),
+              Text('Số lần click vào nút'),
+              Text('$counter',
+                  style: Theme.of(context).textTheme.displaySmall),
+              // Text('Lesson 3 - HomePage'),
+              // Text('Lesson 3 - HomePage')
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -76,4 +81,29 @@ class HomePageSate extends State<Lesson3HomePage> {
           }),
     );
   }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
+  }
+
+  // @override
+  // void didUpdateWidget(Widget oldWidget) {
+  //   super.didUpdateWidget(oldWidget);
+  // }
 }
